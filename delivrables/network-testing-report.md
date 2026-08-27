@@ -85,4 +85,4 @@ sequenceDiagram
 
 ## 5. Wireshark Trace
 
-The pcap file `lte_attach.pcap` is included with this report.
+The pcap file is available [here](https://github.com/AmraniCh/magma-lfx-mentorship-notes/blob/main/delivrables/lte_attach.pcap).

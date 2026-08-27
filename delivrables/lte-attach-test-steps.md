@@ -80,14 +80,14 @@ sudo docker logs magmad 2>&1 | grep -i "checkin"
 
 In the NMS: Traffic > APNs > Add APN.
 
-| Field                                | Value       |
-| ------------------------------------ | ----------- |
-| APN ID                               | `internet`  |
-| Class ID                             | `9`         |
-| ARP Priority Level                   | `15`        |
-| Max Bandwidth UL/DL                  | `200000000` |
-| Pre-emption Capability/Vulnerability | `Disabled`  |
-| PDN Type                             | `IPv4`      |
+| Field | Value |
+| --- | --- |
+| APN ID | `internet` |
+| Class ID | `9` |
+| ARP Priority Level | `15` |
+| Max Bandwidth UL/DL | `200000000` |
+| Pre-emption Capability/Vulnerability | `Disabled` |
+| PDN Type | `IPv4` |
 
 ## 5. Add a subscriber
 
@@ -150,11 +150,11 @@ for f in *.example; do sudo mv "$f" "${f%.example}"; done
 
 Changes from the defaults:
 
-| Field         | Default                          | Changed to          | Why                                                      |
-| ------------- | -------------------------------- | ------------------- | -------------------------------------------------------- |
-| `mme_addr`    | `127.0.1.100`                    | `127.0.0.1`         | Default points to srsRAN's built-in EPC, not Magma's MME |
-| `device_name` | `#device_name = zmq` (commented) | `device_name = zmq` | Enable ZMQ virtual radio                                 |
-| `device_args` | commented                        | uncommented         | ZMQ TCP ports for the radio link                         |
+| Field | Default | Changed to | Why |
+| --- | --- | --- | --- |
+| `mme_addr` | `127.0.1.100` | `127.0.0.1` | Default points to srsRAN's built-in EPC, not Magma's MME |
+| `device_name` | `#device_name = zmq` (commented) | `device_name = zmq` | Enable ZMQ virtual radio |
+| `device_args` | commented | uncommented | ZMQ TCP ports for the radio link |
 
 MCC (`001`), MNC (`01`), and `n_prb` (`50`) were already correct in the defaults.
 
@@ -168,13 +168,13 @@ sudo sed -i 's|tac = 0x0007|tac = 0x0001|' /etc/srsran/rr.conf
 
 Changes from the defaults:
 
-| Field          | Default                   | Changed to        | Why                                |
-| -------------- | ------------------------- | ----------------- | ---------------------------------- |
-| `imsi`         | `001010123456780`         | `001010000000001` | Must match the subscriber in orc8r |
-| `device_name`  | commented                 | `zmq`             | Enable ZMQ                         |
-| `device_args`  | commented                 | uncommented       | ZMQ TCP ports (reversed from eNB)  |
-| `apn`          | `#apn = internetinternet` | `apn = internet`  | Must match the APN in orc8r        |
-| `apn_protocol` | commented                 | `ipv4`            | Match the PDN type                 |
+| Field | Default | Changed to | Why |
+| --- | --- | --- | --- |
+| `imsi` | `001010123456780` | `001010000000001` | Must match the subscriber in orc8r |
+| `device_name` | commented | `zmq` | Enable ZMQ |
+| `device_args` | commented | uncommented | ZMQ TCP ports (reversed from eNB) |
+| `apn` | `#apn = internetinternet` | `apn = internet` | Must match the APN in orc8r |
+| `apn_protocol` | commented | `ipv4` | Match the PDN type |
 
 The `k` and `opc` were already matching the subscriber values by coincidence (same test values).
 
@@ -249,7 +249,7 @@ sudo srsue /etc/srsran/ue.conf
 
 Wait for `Network attach successful. IP: 192.168.128.x`.
 
-Stop all three with Ctrl+C (srsue first, then srsenb, then tcpdump). The pcap file can be opened in Wireshark with filter `s1ap || nas-eps`.
+Stop all three with Ctrl+C (srsue first, then srsenb, then tcpdump). The pcap file can be opened in Wireshark with filter `s1ap || nas-eps`. The captured file is available [here](https://github.com/AmraniCh/magma-lfx-mentorship-notes/blob/main/delivrables/lte_attach.pcap).
 
 ## 12. Startup script (after VM reboot)
 
