@@ -17,7 +17,7 @@ I mostly communicated with Lucas and Micky directly using Slack, but also we dis
 
 ## What I learned
 
-For me this was a very useful mentorship either on the technical side or the communication side. For technical stuff I learned about Kubernetes, Minikube, Helm charts, 4G/LTE, 5G, and telecommunication in general, which connects directly to my studies in CS & telecommunication, I also learned how to use srsRAN 4G to simulate a full LTE attach using ZeroMQ virtual radios instead of real radio hardware, beyond that I got experience debugging across multiple layers (VirtualBox, WSL, Docker, Kubernetes, kernel modules), reading C++ source code to trace issues that config changes couldn't fix, and capturing network traffic with Wireshark and tcpdump for protocol analysis.
+For me this was a very useful mentorship either on the technical side or the communication side. For technical stuff I learned about Kubernetes, Minikube, Helm charts, 4G/LTE, and telecommunication in general, which connects directly to my studies in CS & telecommunication, I also learned how to use srsRAN 4G to simulate a full LTE attach using ZeroMQ virtual radios instead of real radio hardware, beyond that I got experience debugging across multiple layers (VirtualBox, WSL, Docker, Kubernetes, kernel modules), reading C++ source code to trace issues that config changes couldn't fix, and capturing network traffic with Wireshark and tcpdump for protocol analysis.
 
 I also encountered a lot of subjects when working on Linux that are related to LPIC 1 that I'm currently preparing for, so it was beneficial in both sides.
 
