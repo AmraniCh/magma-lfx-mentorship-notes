@@ -11,7 +11,7 @@ I mostly communicated with Lucas and Micky directly using Slack, but also we dis
 ## Contributions
 
 - [PR #16032](https://github.com/magma/magma/pull/16032): Fixed deprecated Kubernetes API versions (`policy/v1beta1` to `policy/v1`) across 27 YAML files in both the orc8r and lte-orc8r Helm charts. Without this fix, `helm install` fails on Kubernetes 1.25+.
-- [PR #16034](https://github.com/magma/magma/pull/16034): Updated the Minikube deployment guide: fixed the Kubernetes version, added the fluentd gem-pin workaround, the cert ownership fix, and a new section for installing the LTE chart.
+- [PR #16034](https://github.com/magma/magma/pull/16034), [PR #80](https://github.com/magma/magma-documentation/pull/80): Updated the Minikube deployment guide: fixed the Kubernetes version, added the fluentd gem-pin workaround, the cert ownership fix, and a new section for installing the LTE chart.
 - Wrote deployment guides for the [AGW](guides/agw-deployment.md), [orc8r on Minikube](guides/orc8r-deployment-guide.md), and the [LTE module installation](guides/install-lte-module.md), documenting every issue and fix at the exact step where it occurs.
 - Both PRs were validated on a clean AWS instance (t3.xlarge, Ubuntu 22.04) to confirm reproducibility before submitting.
 
