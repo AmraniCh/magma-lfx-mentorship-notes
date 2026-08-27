@@ -177,9 +177,9 @@ This should return the full LTE network configuration (cellular, dns, etc.) inst
 
 ## 6. Summary of Issues and Fixes
 
-| Issue | Cause | Fix |
-| --- | --- | --- |
-| NMS shows "Not Found" when creating a network | LTE module not deployed; `/magma/v1/lte` endpoint does not exist | Install the `lte-orc8r` Helm chart separately |
-| `helm install` fails with `nil pointer evaluating interface {}.orc8r_domain_name` | Example values file is missing the `controller.image.env.orc8r_domain_name` field | Add `env: orc8r_domain_name: magma.test` under `controller.image` |
-| `helm install` fails with `no matches for kind "PodDisruptionBudget" in version "policy/v1beta1"` | Kubernetes 1.28 removed beta API versions | Replace `policy/v1beta1` with `policy/v1` in the chart templates |
-| Network exists in API but not in NMS | Network was created as generic (before LTE module existed), so NMS cannot query it via `/magma/v1/lte` | Delete the generic network and recreate it through the LTE endpoint or NMS |
+| Issue                                                                                             | Cause                                                                                                  | Fix                                                                        |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| NMS shows "Not Found" when creating a network                                                     | LTE module not deployed; `/magma/v1/lte` endpoint does not exist                                       | Install the `lte-orc8r` Helm chart separately                              |
+| `helm install` fails with `nil pointer evaluating interface {}.orc8r_domain_name`                 | Example values file is missing the `controller.image.env.orc8r_domain_name` field                      | Add `env: orc8r_domain_name: magma.test` under `controller.image`          |
+| `helm install` fails with `no matches for kind "PodDisruptionBudget" in version "policy/v1beta1"` | Kubernetes 1.28 removed beta API versions                                                              | Replace `policy/v1beta1` with `policy/v1` in the chart templates           |
+| Network exists in API but not in NMS                                                              | Network was created as generic (before LTE module existed), so NMS cannot query it via `/magma/v1/lte` | Delete the generic network and recreate it through the LTE endpoint or NMS |
