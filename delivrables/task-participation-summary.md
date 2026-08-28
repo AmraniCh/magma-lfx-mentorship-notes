@@ -4,10 +4,6 @@
 
 After discussions with my mentor Lucas, we decided to work on improving Magma deployment especially for local development. Currently Magma deployment is a little complicated and there are a lot of issues you will encounter during it. My objective was working on the Minikube deployment and after validation we will integrate it in magma-deployer.
 
-## Communication
-
-I mostly communicated with Lucas and Micky directly using Slack, but also we discussed the progress during weekly meetings.
-
 ## Contributions
 
 - [PR #16032](https://github.com/magma/magma/pull/16032): Fixed deprecated Kubernetes API versions (`policy/v1beta1` to `policy/v1`) across 27 YAML files in both the orc8r and lte-orc8r Helm charts. Without this fix, `helm install` fails on Kubernetes 1.25+.
